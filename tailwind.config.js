@@ -6,8 +6,10 @@ module.exports = {
           'gray-100': '#EDF2F6',
           'gray-200': '#B8BBCF',
           'gray-300': '#47495C',
-          'gray-300': '#6B8CA8',
+          'gray-400': '#6B8CA8',
+          'gray-500': '#383E58',
           'black': '#060710',
+          'black-100': '#0A1032',
           'purle': '#433AD1',
           'brown': '#A98D58',
 
@@ -15,6 +17,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
+          'Nunito Sans',
           'Roboto',
           'system-ui',
           '-apple-system',
@@ -34,6 +37,13 @@ module.exports = {
       },
     }
   },
-  variants: {},
+  variants: {
+    transform: ['responsive', 'group-hover'],
+    transformOrigin: ['responsive', 'group-hover'],
+    scale: ['responsive', 'hover', 'focus', 'group-hover'],
+    rotate: ['responsive', 'hover', 'focus', 'group-hover'],
+    translate: ['responsive', 'hover', 'focus', 'group-hover'],
+    skew: ['responsive', 'hover', 'focus', 'group-hover'],
+  },
   plugins: []
 }
