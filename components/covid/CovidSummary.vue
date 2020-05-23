@@ -2,9 +2,18 @@
   <div class="bg-cob-covid-gray rounded-lg shadow w-full p-4 h-auto">
     <div class="flex items-center text-cob-covid-black mb-1 ml-2">
       <span class="text-lg mr-1">Info Covid</span>
-      <span class="px-2 py-1 text-xs text-cob-covid-gray bg-indigo-600 rounded-full mr-1"> <i class="fa fa-fw fa-globe-asia"></i> Global</span>
-      <span class="px-2 py-1 text-xs hidden sm:block text-cob-covid-gray bg-red-600 rounded-full mr-1"> <i class="fa fa-fw fa-lungs-virus"></i> Critical: {{dataSummary.critical}}</span>
-      <span class="px-2 py-1 text-xs hidden md:block text-cob-covid-gray bg-cob-covid-green rounded-full"> <i class="fa fa-fw fa-stopwatch-20"></i> Tested: {{dataSummary.tested}}</span>
+      <span
+        v-tooltip="{ content: 'Cakupan wilayah', classes: 'text-xs' }"
+        class="px-2 py-1 text-xs text-cob-covid-gray bg-indigo-600 rounded-full mr-1"
+      > <i class="fa fa-fw fa-globe-asia"></i> Global</span>
+      <span
+        v-tooltip="{ content: 'Critical per setiap kasus', classes: 'text-xs' }"
+        class="px-2 py-1 text-xs hidden sm:block text-cob-covid-gray bg-red-600 rounded-full mr-1"
+      > <i class="fa fa-fw fa-lungs-virus"></i> Critical: {{dataSummary.critical}}</span>
+      <span
+        v-tooltip="{ content: 'Pasient yang telah dites', classes: 'text-xs' }"
+        class="px-2 py-1 text-xs hidden md:block text-cob-covid-gray bg-cob-covid-green rounded-full"
+      > <i class="fa fa-fw fa-stopwatch-20"></i> Tested: {{dataSummary.tested}}</span>
     </div>
     <div class="text-sm text-gray-600 font-semibold ml-2 mb-4">Updated At {{updated_at}} <span class="text-cob-covid-green"><i class="fa fa-fw fa-check-circle"></i></span></div>
 

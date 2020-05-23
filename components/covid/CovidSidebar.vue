@@ -9,6 +9,7 @@
         </div>
       </div>
       <NLink
+        v-tooltip="{ content: 'Tambah informasi', classes: 'text-xs' }"
         to="/design02a"
         class="py-2 px-4 text-sm rounded bg-gray-200 text-gray-500 focus:outline-none"
       ><i class="fa fa-plus"></i></NLink>
