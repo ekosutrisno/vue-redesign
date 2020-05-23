@@ -17,7 +17,7 @@
             UIDESIGN-C01
           </nuxt-link>
           <nuxt-link
-            to="/design02"
+            to="/design02a"
             class="button--grey"
           >
             UIDESIGN-C02

@@ -43,26 +43,57 @@
     <div class="flex-1 bg-coa-gray-100">
       <div class="flex items-center justify-end p-4 space-x-3">
         <div class="space-x-2">
-          <button class="bg-white text-base text-coa-gray-200 rounded-full py-2 px-3 shadow-md focus:outline-none">
+          <button
+            @click="alertCard"
+            class="bg-white text-base text-coa-gray-200 rounded-full py-2 px-3 shadow-md focus:outline-none"
+          >
             <i class="fa fa-envelope"></i>
           </button>
-          <button class="bg-white text-base text-coa-gray-200 rounded-full py-2 px-3 shadow-md focus:outline-none">
+          <button
+            @click="alertCard"
+            class="bg-white text-base text-coa-gray-200 rounded-full py-2 px-3 shadow-md focus:outline-none"
+          >
             <i class="fa fa-bell"></i>
           </button>
         </div>
         <div class="border-r-2 border-coa-gray-200 h-8"></div>
         <div class="flex space-x-3 items-center">
-          <div class="rounded-full cursor-pointer shadow-md w-8 h-8 overflow-hidden">
+          <NLink
+            to="/design01"
+            class="rounded-full cursor-pointer shadow-md w-8 h-8 overflow-hidden"
+          >
             <img
               class="object-cover"
               src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=333&q=80"
               alt="avatar"
             />
+          </NLink>
+          <div
+            @click="open = !open"
+            class="relative text-coa-gray-300 font-semibold text-sm cursor-pointer"
+          >Hast's & Thing's <i class="fa fa-fw fa-angle-down"></i>
+            <div class="absolute top-0 left-0 shadow-xl -ml-12 mt-8 z-30">
+              <div
+                v-if="open"
+                class="bg-white flex flex-col justify-start rounded w-40 h-full py-2"
+              >
+                <NLink
+                  to="/"
+                  class="text-coa-gray-400 w-full font-medium py-3 pl-4 text-sm border-l-4 border-transparent focus:border-coa-purle focus:text-indigo-700 focus:bg-gray-200"
+                >
+                  <span><i class="fa fa-fw fa-store"></i>
+                  </span><span class="ml-4">Home</span>
+                </NLink>
+                <NLink
+                  to="/design01"
+                  class="text-coa-gray-400 w-full font-medium py-3 pl-4 text-sm border-l-4 border-transparent focus:border-coa-purle focus:text-indigo-700 focus:bg-gray-200"
+                >
+                  <span><i class="fa fa-fw fa-receipt"></i></span>
+                  <span class="ml-3">My Task</span>
+                </NLink>
+              </div>
+            </div>
           </div>
-          <NLink
-            to="/design01"
-            class="text-coa-gray-300 font-semibold text-sm"
-          >Hast's & Thing's <i class="fa fa-fw fa-angle-down"></i></NLink>
         </div>
       </div>
 
@@ -72,7 +103,7 @@
           Hey Tim, Welcome to Workly
         </h1>
         <div class="flex flex-wrap justify-start h-custom overflow-y-auto">
-          <div class="card relative flex flex-col items-center bg-white group rounded cursor-pointer mr-4 mb-4 p-3">
+          <div class="card transform relative flex flex-col items-center bg-white group rounded cursor-pointer mr-4 mb-4 p-3">
             <div class="mt-10 w-20 h-20 shadow-custom rounded-md overflow-hidden">
               <img
                 class="object-cover w-full h-full"
@@ -105,7 +136,7 @@
               Yes, Completed!
             </button>
           </div>
-          <div class="card relative flex flex-col items-center bg-white group rounded cursor-pointer mr-4 mb-4 p-3">
+          <div class="card transform relative flex flex-col items-center bg-white group rounded cursor-pointer mr-4 mb-4 p-3">
             <div class="mt-10 w-20 h-20 shadow-custom rounded-md overflow-hidden">
               <img
                 class="object-cover w-full h-full"
@@ -137,7 +168,7 @@
               <i class="fa fa-fw fa-plus"></i> Add your Task
             </button>
           </div>
-          <div class="card relative flex flex-col items-center bg-white group rounded cursor-pointer mr-4 mb-4 p-3">
+          <div class="card transform relative flex flex-col items-center bg-white group rounded cursor-pointer mr-4 mb-4 p-3">
             <div class="mt-10 w-20 h-20 shadow-custom rounded-md overflow-hidden">
               <img
                 class="object-cover w-full h-full"
@@ -174,8 +205,8 @@
             <h1 class="text-xl font-semibold text-gray-900 mb-4">
               Workly Recommend for "Hat's & Thing's"
             </h1>
-            <div class="flex flex-wrap justify-start h-custom overflow-y-auto">
-              <div class="card relative flex flex-col items-start bg-coa-black-100 group rounded-custom cursor-pointer mr-4 mb-4 py-3 px-6">
+            <div class="flex flex-wrap justify-start h-full">
+              <div class="card transform relative flex flex-col items-start bg-coa-black-100 group rounded-custom cursor-pointer mr-4 mb-4 py-3 px-6">
                 <div class="mt-10">
                   <button class="py-1 px-3 tracking-wider text-xs rounded-full text-white bg-coa-gray-500 focus:outline-none">
                     Subscription Parks
@@ -197,7 +228,7 @@
                   Get this Perk!
                 </button>
               </div>
-              <div class="card flex flex-col items-start bg-white group rounded cursor-pointer mr-4 mb-4 py-3 px-6">
+              <div class="card transform flex flex-col items-start bg-white group rounded cursor-pointer mr-4 mb-4 py-3 px-6">
                 <div class="mt-5 flex flex-col items-start justify-start h-32">
                   <div class="space-x-1 mb-3">
                     <span class="text-orange-400"><i class="fa fa-star"></i></span>
@@ -256,7 +287,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card flex flex-col items-start bg-white group rounded cursor-pointer mr-4 mb-4 py-3 px-6">
+              <div class="card transform flex flex-col items-start bg-white group rounded cursor-pointer mr-4 mb-4 py-3 px-6">
                 <div class="mt-5 flex flex-col items-start justify-start h-32">
                   <div class="space-x-1 mb-3">
                     <span class="text-orange-400"><i class="fa fa-star"></i></span>
@@ -304,9 +335,17 @@
 import Logo from "~/components/Logo";
 export default {
   components: { Logo },
+  data() {
+    return {
+      open: false
+    };
+  },
   methods: {
     alertCard(index) {
       alert("Anda mengklik Card");
+    },
+    openDrop() {
+      this.open = true;
     }
   }
 };
