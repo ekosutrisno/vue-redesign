@@ -1,14 +1,22 @@
-const state = () => {};
+const state = () => ({
+  users: []
+});
 
-const getters = {};
+const mutations = {
+  setUsers: (state, data) => (state.users = data)
+};
 
-const mutations = {};
-
-const actions = {};
+const actions = {
+  async getAllUsers({
+    commit
+  }) {
+    const response = await this.$axios.$get('https://reqres.in/api/users?page=1');
+    commit('setUsers', response.data)
+  }
+};
 
 export default {
   state,
-  getters,
   mutations,
   actions
 }

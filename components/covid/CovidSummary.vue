@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions, mapState } from "vuex";
 export default {
   name: "CovidSummary",
   data() {
@@ -51,9 +51,15 @@ export default {
     this.updated_at = new Date().toDateString();
     this.setBySummary();
   },
-  computed: { ...mapGetters(["dataSummary"]) },
+  computed: {
+    dataSummary() {
+      return this.$store.state.covid.summary;
+    }
+  },
   methods: {
-    ...mapActions(["setBySummary"])
+    ...mapActions({
+      setBySummary: "covid/setBySummary"
+    })
   }
 };
 </script>

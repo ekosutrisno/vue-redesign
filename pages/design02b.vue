@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 import CovidSummary from "~/components/covid/CovidSummary";
 
 export default {
@@ -68,13 +68,16 @@ export default {
   },
   mounted() {
     this.updated_at = new Date().toDateString();
-    this.fetchRegions();
-    this.setBySummary();
+    this.getInfoDataCovid();
   },
-  computed: { ...mapGetters(["allRegions", "dataSummary"]) },
-
+  computed: {
+    ...mapState({
+      allRegions: state => state.covid.regions,
+      dataSummary: state => state.covid.summary
+    })
+  },
   methods: {
-    ...mapActions(["fetchRegions", "setBySummary"])
+    ...mapActions({ getInfoDataCovid: "covid/getInfoDataCovid" })
   }
 };
 </script>

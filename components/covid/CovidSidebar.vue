@@ -43,7 +43,7 @@
         class="py-2 px-4 text-left w-full text-cob-covid-black rounded-md font-bold hover:bg-cob-covid-green hover:text-cob-covid-gray focus:outline-none transition-colors duration-150"
       > <i class="fa fa-fw fa-hospital-user"></i> <span class="ml-3">Rumah Sakit</span></NLink>
       <NLink
-        to="/design02a"
+        to="/login"
         class="py-2 px-4 text-left w-full text-cob-covid-black rounded-md font-bold hover:bg-cob-covid-green hover:text-cob-covid-gray focus:outline-none transition-colors duration-150"
       > <i class="fa fa-fw fa-people-arrows"></i> <span class="ml-3">Sosial Distancing</span></NLink>
       <NLink
