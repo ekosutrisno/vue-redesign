@@ -53,6 +53,10 @@ export default {
       src: '~/plugins/v-tooltip.js',
       ssr: false
     },
+    {
+      src: '~/plugins/vue-formulate.js',
+      ssr: true
+    },
   ],
   /*
    ** Nuxt.js dev-modules

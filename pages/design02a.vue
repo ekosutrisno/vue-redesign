@@ -7,28 +7,28 @@
           <div class="text-cob-covid-black mb-1">
             <span class="text-xl">Info Covid</span>
             <span class="px-2 py-1 text-xs text-cob-covid-gray bg-cob-covid-green rounded-full"> <i class="fa fa-fw fa-globe-asia"></i> Indonesia</span>
-            <span class="px-2 py-1 text-xs text-cob-covid-gray bg-indigo-600 rounded-full"> <i class="fa fa-fw fa-stopwatch-20"></i> Tested: {{dataCountry.tested}}</span>
+            <span class="px-2 py-1 text-xs text-cob-covid-gray bg-indigo-600 rounded-full"> <i class="fa fa-fw fa-stopwatch-20"></i> Tested: {{dataCountry.NewRecovered}}</span>
           </div>
           <div class="text-sm text-gray-600 font-semibold mb-4">Updated At {{updated_at}} <span class="text-cob-covid-green"><i class="fa fa-fw fa-check-circle"></i></span></div>
           <div class="flex">
             <div class="flex flex-col w-full mr-3">
               <div class="w-full p-2 pl-5 mb-4 border-2 border-orange-300 rounded-md shadow-custom bg-orange-100">
                 <h1 class="text-lg text-gray-600 mb-1">Total Kasus</h1>
-                <div class="text-3xl text-orange-400 font-bold">{{dataCountry.total_cases}} <i class="fa fa-fw fa-user-injured"></i> </div>
+                <div class="text-3xl text-orange-400 font-bold">{{dataCountry.TotalConfirmed}} <i class="fa fa-fw fa-user-injured"></i> </div>
               </div>
               <div class="w-full p-2 pl-5 mb-4 border-2 border-indigo-300 rounded-md shadow-custom bg-indigo-100">
                 <h1 class="text-lg text-gray-600 mb-1">Aktif Kasus</h1>
-                <div class="text-3xl text-indigo-500 font-bold">{{dataCountry.active_cases}} <i class="fa fa-fw fa-user-injured"></i> </div>
+                <div class="text-3xl text-indigo-500 font-bold">{{dataCountry.NewConfirmed}} <i class="fa fa-fw fa-user-injured"></i> </div>
               </div>
             </div>
             <div class="flex flex-col w-full">
               <div class="w-full p-2 pl-5 mb-4 border-2 border-green-300 rounded-md shadow-custom bg-green-100">
                 <h1 class="text-lg text-gray-600 mb-1">Pasien Sembuh</h1>
-                <div class="text-3xl text-cob-covid-green font-bold">{{dataCountry.recovered}} <i class="fa fa-fw fa-user-injured"></i> </div>
+                <div class="text-3xl text-cob-covid-green font-bold">{{dataCountry.TotalRecovered}} <i class="fa fa-fw fa-user-injured"></i> </div>
               </div>
               <div class="w-full p-2 pl-5 mb-4 border-2 border-red-300 rounded-md shadow-custom bg-red-100">
                 <h1 class="text-lg text-gray-600 mb-1">Pasien Meninggal</h1>
-                <div class="text-3xl text-red-600 font-bold">{{dataCountry.deaths}} <i class="fa fa-fw fa-user-injured"></i> </div>
+                <div class="text-3xl text-red-600 font-bold">{{dataCountry.TotalDeaths}} <i class="fa fa-fw fa-user-injured"></i> </div>
               </div>
             </div>
           </div>
@@ -71,13 +71,12 @@ export default {
   },
   created() {
     this.updated_at = new Date().toDateString();
-    this.setBySummary();
-    this.setByCountry();
+    this.getInfoDataCovid();
   },
   computed: { ...mapGetters(["dataSummary", "dataCountry"]) },
 
   methods: {
-    ...mapActions(["setBySummary", "setByCountry"])
+    ...mapActions(["getInfoDataCovid"])
   }
 };
 </script>
