@@ -71,17 +71,11 @@ export default {
   },
   mounted() {
     this.updated_at = new Date().toDateString();
-    this.getInfoDataCovid();
   },
   computed: {
     ...mapState({
       dataSummary: state => state.covid.summary,
       dataCountry: state => state.covid.country
-    })
-  },
-  methods: {
-    ...mapActions({
-      getInfoDataCovid: "covid/getInfoDataCovid"
     })
   }
 };

@@ -68,16 +68,12 @@ export default {
   },
   mounted() {
     this.updated_at = new Date().toDateString();
-    this.getInfoDataCovid();
   },
   computed: {
     ...mapState({
       allRegions: state => state.covid.regions,
       dataSummary: state => state.covid.summary
     })
-  },
-  methods: {
-    ...mapActions({ getInfoDataCovid: "covid/getInfoDataCovid" })
   }
 };
 </script>

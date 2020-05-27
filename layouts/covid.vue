@@ -15,6 +15,7 @@
 import CovidSidebar from "~/components/covid/CovidSidebar";
 
 export default {
+  middleware: "getDataCovid",
   name: "covid",
   components: { CovidSidebar }
 };

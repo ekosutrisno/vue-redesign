@@ -49,17 +49,11 @@ export default {
   },
   created() {
     this.updated_at = new Date().toDateString();
-    this.setBySummary();
   },
   computed: {
     dataSummary() {
       return this.$store.state.covid.summary;
     }
-  },
-  methods: {
-    ...mapActions({
-      setBySummary: "covid/setBySummary"
-    })
   }
 };
 </script>
