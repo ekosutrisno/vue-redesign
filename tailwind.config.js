@@ -21,6 +21,21 @@ module.exports = {
           'covid-gray-bg2': '#75a9a8',
           'covid-black': '#404B53',
           'covid-green': '#01B075',
+        },
+        mov: {
+          'b-100': '#040609',
+          'b-200': '#01040b',
+          'bg-dark': '#071D34',
+          'bg-gray': '#1C3146',
+          'g-100': '#d8e0e6',
+          'g-200': '#adb5c6',
+          'g-300': '#6d788e',
+          'g-400': '#384343',
+          'g1-100': '#364038',
+          'g1-200': '#818582',
+          'green': '#508e4a',
+          'green-01': '#4ABBAA',
+          'green-02': '#039e5b',
         }
 
       },
@@ -59,6 +74,7 @@ module.exports = {
     rotate: ['responsive', 'hover', 'focus', 'group-hover'],
     translate: ['responsive', 'hover', 'focus', 'group-hover'],
     skew: ['responsive', 'hover', 'focus', 'group-hover'],
+    textColor: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover'],
   },
   plugins: []
 }

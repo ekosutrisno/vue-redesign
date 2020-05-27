@@ -22,6 +22,12 @@
           >
             UIDESIGN-C02
           </nuxt-link>
+          <nuxt-link
+            to="/movie01"
+            class="button--green ml-4"
+          >
+            MOVIE-APP
+          </nuxt-link>
         </div>
       </div>
     </div>

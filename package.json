@@ -15,6 +15,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
     "nuxt": "^2.0.0",
+    "rsvp": "^4.8.5",
     "v-tooltip": "^2.0.3",
     "vue-js-modal": "^2.0.0-rc.3"
   },
