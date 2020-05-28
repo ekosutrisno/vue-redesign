@@ -97,7 +97,20 @@
       <!-- awal content -->
       <div class="h-full p-8 flex-1 rounded text-mov-g-100">
         <div class="w-full flex items-center justify-between">
-          <div>wkwkw</div>
+          <div>
+            <form
+              @submit.prevent="searchMovie()"
+              class="flex items-center"
+            >
+              <div class="text-mov-green-01"><i class="fa fa-fw fa-search"></i></div>
+              <input
+                v-model="judul"
+                type="text"
+                placeholder="Search..."
+                class="bg-transparent py-1 px-3 placeholder-gray-600 text-mov-g-100 font-bold focus:outline-none text-sm"
+              >
+            </form>
+          </div>
           <div class="flex items-center justify-between">
             <div class="flex items-center space-x-10 mr-10">
               <div class="text-gray-600"><i class="fa fa-calendar"></i></div>
@@ -129,6 +142,45 @@
 
           </div>
         </div>
+        <div class="mt-4 overflow-hidden w-slide">
+          <vue-glide
+            :perView="3"
+            :gap="0"
+          >
+            <vue-glide-slide
+              v-for="movie in movies"
+              :key="movie.imdbID"
+              class="mb-3 p-4"
+            >
+              <div
+                @click="getDetailData(movie.imdbID)"
+                class="h-card cursor-pointer w-64 bg-mov-bg-gray rounded-lg shadow-xl overflow-hidden transform transition-transform duration-100 hover:scale-105"
+              >
+                <div class="img-poster w-full">
+                  <img
+                    class="object-cover w-full h-full"
+                    :src="movie.Poster"
+                    alt="poster"
+                  >
+                </div>
+                <div class="flex flex-col items-start p-3">
+                  <h1 class="text-xs text-mov-g-100 uppercase">{{movie.Title}}</h1>
+                </div>
+                <span></span>
+              </div>
+            </vue-glide-slide>
+          </vue-glide>
+        </div>
+        <div class="text-xs">
+          &bull; {{movie.Title}} &bull; {{movie.Actors}} &bull; {{movie.Awards}} &bull; {{movie.Director}} &bull; {{movie.Gendre}} &bull;
+          {{movie.Language}}&bull; {{movie.Plot}} &bull; {{movie.Released}} &bull; {{movie.Runtime}} &bull; {{movie.Awards}} &bull;
+          {{movie.Writer}} &bull; {{movie.Year}} &bull; {{movie.imdbRating}} &bull; {{movie.imdbVotes}} &bull; {{movie.Metascore}} &bull;
+          {{movie.Rated}} &bull;
+          <span
+            v-for="(rating,i) in movie.Ratings"
+            :key="i"
+          >{{rating.Source}}: {{rating.Value}}</span>
+        </div>
       </div>
       <!-- ending content  -->
     </div>
@@ -136,8 +188,38 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+import { Glide, GlideSlide } from "vue-glide-js";
 export default {
-  layout: "movie"
+  layout: "movie",
+  components: {
+    [Glide.name]: Glide,
+    [GlideSlide.name]: GlideSlide
+  },
+  data() {
+    return {
+      judul: ""
+    };
+  },
+  computed: {
+    ...mapState({
+      movies: state => state.movies.movies,
+      movie: state => state.movies.movie
+    })
+  },
+  async fetch({ store, params, from }) {
+    let cekFrom = !from;
+    if (cekFrom) await store.dispatch("movies/loadAllMovies");
+  },
+  methods: {
+    getDetailData(imdbID) {
+      this.$store.dispatch("movies/getMovieDetail", imdbID);
+    },
+    searchMovie() {
+      if (this.judul == "") return;
+      this.$store.dispatch("movies/loadAllMovies", this.judul);
+    }
+  }
 };
 </script>
 
@@ -145,7 +227,13 @@ export default {
 .h-custom-01 {
   height: 93vh;
 }
-.h-custom-01 {
-  height: 90vh;
+.h-card {
+  height: 23rem;
+}
+.img-poster {
+  height: 20rem;
+}
+.w-slide {
+  width: 880px;
 }
 </style>

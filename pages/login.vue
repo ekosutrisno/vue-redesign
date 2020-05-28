@@ -17,13 +17,15 @@ export default {
   layout: "covid",
   mounted() {
     this.getAllUsers();
+    this.loadAllMovies();
   },
   computed: {
-    ...mapState({ allUsers: state => state.todos.users })
+    ...mapState({ allUsers: state => state.movies.users })
   },
   methods: {
     ...mapActions({
-      getAllUsers: "todos/getAllUsers"
+      getAllUsers: "movies/getAllUsers",
+      loadAllMovies: "movies/loadAllMovies"
     })
   }
 };

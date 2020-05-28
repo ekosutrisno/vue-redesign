@@ -1,4 +1,5 @@
 <template>
+
   <svg
     class="NuxtLogo"
     width="245"

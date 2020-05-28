@@ -57,6 +57,10 @@ export default {
       src: '~/plugins/vue-formulate.js',
       ssr: true
     },
+    {
+      src: '~/plugins/vue-glide-js.js',
+      ssr: true
+    },
   ],
   /*
    ** Nuxt.js dev-modules
