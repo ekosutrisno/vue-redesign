@@ -3,37 +3,14 @@
     <div class="container-c">
       <div>
         <logo />
-        <h1 class="title">
-          Redesign & Create
-        </h1>
-        <h2 class="subtitle">
-          Meredesign dan Create UI Inspired From Drible
-        </h2>
+        <h1 class="title">Redesign & Create</h1>
+        <h2 class="subtitle">Meredesign dan Create UI Inspired From Drible</h2>
         <div class="links">
-          <nuxt-link
-            to="/design01"
-            class="button--green"
-          >
-            UIDESIGN-C01
-          </nuxt-link>
-          <nuxt-link
-            to="/design02a"
-            class="button--grey"
-          >
-            UIDESIGN-C02
-          </nuxt-link>
-          <nuxt-link
-            to="/movie01"
-            class="button--green ml-4"
-          >
-            MOVIE-APP
-          </nuxt-link>
-          <nuxt-link
-            to="/dribble"
-            class="button--grey ml-4"
-          >
-            DRIBBLE-C03
-          </nuxt-link>
+          <nuxt-link to="/design01" class="button--green">UIDESIGN-C01</nuxt-link>
+          <nuxt-link to="/design02a" class="button--grey">UIDESIGN-C02</nuxt-link>
+          <nuxt-link to="/movie01" class="button--green ml-4">MOVIE-APP</nuxt-link>
+          <nuxt-link to="/dribble" class="button--grey ml-4">DRIBBLE-C03</nuxt-link>
+          <nuxt-link to="/landingpage/a1" class="button--green ml-4">LANDING PAGE</nuxt-link>
         </div>
       </div>
     </div>
