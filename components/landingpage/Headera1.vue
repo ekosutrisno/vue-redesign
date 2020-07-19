@@ -6,7 +6,7 @@
         <span class="font-bold">Hight</span>
       </h1>
     </div>
-    <div class="flex flex-col md:flex-row mb-3 sm:mb-0 items-center justify-between md:space-x-3">
+    <div class="flex flex-col md:flex-row mb-3 sm:mb-0 items-center justify-between md:space-x-6">
       <Linksa1 v-for="link in links" :key="link.id" :link="link" />
     </div>
     <div class="flex items-center justify-between space-x-3">
